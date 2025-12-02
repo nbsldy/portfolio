@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Alday, Nheil</title>
+    <title>Alday & Buenaflor - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -12,599 +12,363 @@
         }
 
         :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --text-light: #eaeaea;
-            --text-muted: #a0a0a0;
-            --border: #2d3561;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f97316;
+            --text-color: #1f2937;
+            --light-bg: #f9fafb;
+            --white: #ffffff;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background-color: var(--primary);
-            color: var(--text-light);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
         }
 
-        /* Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
         nav {
-            position: fixed;
+            background-color: var(--white);
+            padding: 20px;
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-light);
-            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 100;
         }
 
         nav ul {
-            display: flex;
             list-style: none;
-            gap: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--text-light);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding-top: 120px;
-            padding-bottom: 80px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-bottom: 1px solid var(--border);
+            color: var(--accent-color);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 20px;
         }
 
-        .hero-content {
+        section {
+            margin: 60px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .profiles {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            font-weight: 700;
+        .profile-card {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .hero-text .title {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .hero-text p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            padding-left: 1rem;
-            border-left: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-light);
-            border-left-color: var(--accent);
-        }
-
-        .hero-image {
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--accent);
-            border-radius: 12px;
-            height: 400px;
-            opacity: 0.1;
+            color: var(--white);
+            font-size: 3rem;
         }
 
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border);
+        .profile-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
         }
 
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 700;
+        .role {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-        }
-
-        .about-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .meta-item h3 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-
-        .meta-item p {
-            color: var(--text-light);
+        .bio {
+            color: #6b7280;
+            margin-bottom: 20px;
             line-height: 1.8;
         }
 
-        .about-text {
-            color: var(--text-muted);
-            line-height: 1.9;
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
+        .skill-badge {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
         }
 
-        /* Projects Section */
         .projects {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .projects h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 700;
-        }
-
-        .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
 
         .project-card {
-            background: var(--secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            border: 2px solid var(--light-bg);
+            border-radius: 10px;
+            padding: 20px;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
         .project-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
         }
 
-        .project-image {
-            height: 200px;
-            background: var(--accent);
-            opacity: 0.1;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
+        .project-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
         }
 
-        .project-info p {
-            color: var(--text-muted);
+        .project-description {
+            color: #6b7280;
+            margin-bottom: 15px;
             font-size: 0.95rem;
-            margin-bottom: 1rem;
         }
 
-        .tech-stack {
+        .project-tags {
             display: flex;
+            gap: 8px;
             flex-wrap: wrap;
-            gap: 0.5rem;
         }
 
-        .tech-tag {
-            background: var(--accent);
-            color: var(--text-light);
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
+        .tag {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 5px;
             font-size: 0.8rem;
         }
 
-        /* Skills Section */
-        .skills {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .skills h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 700;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--secondary);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .skill-category h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-
-        .skill-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .skill-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .skill-item span {
-            color: var(--text-muted);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .contact-text {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .contact-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .contact-link:hover {
-            color: var(--text-light);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* Footer */
         footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 40px 20px;
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            margin-top: 80px;
         }
 
-        /* Responsive */
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
         @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
             nav ul {
-                gap: 1rem;
+                gap: 15px;
             }
 
-            .hero-content {
+            .profiles {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <header>
+        <h1>Alday & Buenaflor</h1>
+        <p class="tagline">Digital Design & Development Portfolio</p>
+    </header>
+
     <nav>
-        <div class="container">
-            <a href="#home" class="logo">Me</a>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>   
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Nheil Brian Alday</h1>
-                    <p class="title">Full Stack Developer</p>
-                    <p>I build beautiful, performant web experiences with modern technologies and thoughtful design patterns.</p>
-                    <div class="nav-links">
-                        <a href="#about">→ About</a>
-                        <a href="#projects">→ Projects</a>
-                        <a href="#skills">→ Skills</a>
+    <main class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <div class="profiles">
+                <div class="profile-card">
+                    <div class="profile-image">💼</div>
+                    <h3>Buenaflor, Allen</h3>
+                    <p class="role">UI/UX Designer</p>
+                    <p class="bio">Creative designer with 5+ years of experience crafting beautiful and intuitive digital experiences. Specialized in user research and interaction design.</p>
+                    <div class="skills">
+                        <span class="skill-badge">Figma</span>
+                        <span class="skill-badge">UI Design</span>
+                        <span class="skill-badge">Prototyping</span>
+                        <span class="skill-badge">User Research</span>
                     </div>
                 </div>
-                <div class="hero-image">Featured Image</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About</h2>
-            <div class="about-content">
-                <div class="about-meta">
-                    <div class="meta-item">
-                        <h3>Location</h3>
-                        <p>Bulacan</p>
+                <div class="profile-card">
+                    <div class="profile-image">💻</div>
+                    <h3>Alday, Nheil Brian</h3>
+                    <p class="role">Back-End Developer</p>
+                    <p class="bio">Passionate developer building scalable web applications. Expert in modern JavaScript frameworks and cloud technologies with 6+ years in the industry.</p>
+                    <div class="skills">
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">TypeScript</span>
                     </div>
-                    <div class="meta-item">
-                        <h3>Experience</h3>
-                        <p>8+ Years</p>
-                    </div>
-                    <div class="meta-item">
-                        <h3>Currently</h3>
-                        <p>Senior Developer at Tech Corp</p>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p>I'm a passionate developer with a focus on creating elegant solutions to complex problems. My journey in tech started with a curiosity about how things work, which evolved into a career building products that millions of people use every day.</p>
-                    <p>With experience across frontend, backend, and DevOps, I bring a holistic perspective to product development. I'm particularly interested in performance optimization, scalable architecture, and creating delightful user experiences.</p>
-                    <p>When I'm not coding, you can find me contributing to open source, writing technical articles, or exploring new technologies.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
+        <!-- Projects Section -->
+        <section id="projects">
             <h2>Featured Projects</h2>
-            <div class="project-grid">
+            <div class="projects">
                 <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-stack e-commerce solution with real-time inventory management and payment processing.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
+                    <h4>E-Commerce Platform</h4>
+                    <p class="project-description">A modern e-commerce platform with real-time inventory management and seamless checkout experience. Sarah led the design, Marcus built the backend.</p>
+                    <div class="project-tags">
+                        <span class="tag">Design</span>
+                        <span class="tag">Development</span>
+                        <span class="tag">React</span>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>Analytics Dashboard</h3>
-                        <p>Real-time data visualization tool for tracking business metrics and KPIs.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Firebase</span>
-                        </div>
+                    <h4>Mobile App Redesign</h4>
+                    <p class="project-description">Complete redesign of a fitness tracking app focusing on user retention. Improved engagement metrics by 40% through thoughtful UX improvements.</p>
+                    <div class="project-tags">
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Mobile</span>
+                        <span class="tag">Research</span>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>Mobile App</h3>
-                        <p>Native iOS app for task management with offline synchronization capabilities.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Swift</span>
-                            <span class="tech-tag">Core Data</span>
-                            <span class="tech-tag">REST API</span>
-                        </div>
+                    <h4>SaaS Dashboard</h4>
+                    <p class="project-description">Collaborative project creating an analytics dashboard for marketing teams. Features data visualization, real-time updates, and advanced filtering.</p>
+                    <div class="project-tags">
+                        <span class="tag">Dashboard</span>
+                        <span class="tag">Full Stack</span>
+                        <span class="tag">Analytics</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span>React</span>
-                            <span>Expert</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>TypeScript</span>
-                            <span>Advanced</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>Tailwind CSS</span>
-                            <span>Advanced</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>Next.js</span>
-                            <span>Expert</span>
-                        </div>
+                <div class="project-card">
+                    <h4>Design System</h4>
+                    <p class="project-description">Built a comprehensive design system and component library to streamline design-to-development workflows across multiple projects.</p>
+                    <div class="project-tags">
+                        <span class="tag">Design System</span>
+                        <span class="tag">Components</span>
+                        <span class="tag">Documentation</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span>Node.js</span>
-                            <span>Expert</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>PostgreSQL</span>
-                            <span>Advanced</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>Python</span>
-                            <span>Intermediate</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>AWS</span>
-                            <span>Advanced</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Others</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span>Git</span>
-                            <span>Expert</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>Docker</span>
-                            <span>Advanced</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>Figma</span>
-                            <span>Intermediate</span>
-                        </div>
-                        <div class="skill-item">
-                            <span>CI/CD</span>
-                            <span>Advanced</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-text">I'm always interested in hearing about new projects and opportunities. Feel free to reach out if you'd like to collaborate!</p>
-            <div class="contact-links">
-                <a href="mailto:nheil699@gmail.com" target="_blank class="contact-link">Email Me</a>
-                <a href="#" class="contact-link">Schedule a Call</a>
-                <a href="#" class="contact-link">View Resume</a>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/nbsldy" target="_blank" class="social-link" title="GitHub">GH</a>
-                <a href="#" class="social-link" title="Instagram">IG</a>
-            </div>
-        </div>
-    </section>
+                <div class="project-card">
+                    <h4>AI Content Generator</h4>
+                    <p class="project-description">Integrated AI capabilities into a content management platform. Marcus developed the backend APIs while Sarah designed an intuitive user interface.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">Backend</span>
+                        <span class="tag">API</span>
+                    </div>
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Nheil Alday. All rights reserved.</p>
+                <div class="project-card">
+                    <h4>Brand Website</h4>
+                    <p class="project-description">Designed and developed a high-performance marketing website. Achieved 98 Lighthouse score with optimized images and lazy loading.</p>
+                    <div class="project-tags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">Performance</span>
+                        <span class="tag">SEO</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <a href="mailto:nheil699@gmail.com" target="_blank">nheil699@gmail.com</a>
+            <a href="mailto:allenbuenaflor89@gmail.com" target="_blank">allenbuenaflor89@gmail.com</a>
         </div>
+        <div class="contact-info">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="https://github.com/nbsldy " target="_blank">GitHub</a>
+        </div>
+        <p>&copy; 2025 Alday & Buenaflor. All rights reserved.</p>
     </footer>
 </body>
 </html>
